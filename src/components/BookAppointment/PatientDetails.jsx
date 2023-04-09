@@ -56,6 +56,7 @@ const PatientDetails = ({ visitState, tokenState, ...props }) => {
         tokenState("");
       })
       .then(() => {
+        alert("Appointment Book Successfully!")
         window.location.reload();
       })
       .catch((err) => console.log(err));

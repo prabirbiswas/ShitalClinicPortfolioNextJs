@@ -23,6 +23,7 @@ const initialState = {
     weight: "",
     BP: "false",
     bloodSugar: "false",
+    visitNo: "1",
   },
   isLoading: true,
   error: null,
@@ -49,6 +50,8 @@ const formReducer = (formState, action) => {
         error: action.payload,
         isLoading: false,
       };
+    case "reset":
+      return initialState;
     default:
       return formState;
   }
@@ -125,10 +128,12 @@ const FirstVisit = () => {
         if (response.status === 200) {
           setLoading(false);
           alert("Appointment Booked Successfully!");
+          dispatch({ type: "reset" });
         }
-        await response.json();
+         await response.json();
       } catch (error) {
         setLoading(false);
+        dispatch({ type: "FETCH_ERROR", payload: error });
         alert(error.message);
       }
     } else {
