@@ -56,7 +56,7 @@ const PatientDetails = ({ visitState, tokenState, ...props }) => {
         tokenState("");
       })
       .then(() => {
-        alert("Appointment Book Successfully!")
+        alert("Appointment Book Successfully!");
         window.location.reload();
       })
       .catch((err) => console.log(err));
@@ -91,7 +91,7 @@ const PatientDetails = ({ visitState, tokenState, ...props }) => {
           <Typography variant="p">Patient Not Found!</Typography>
           <br />
           <Typography variant="p">
-            Please enter valid Token Number or you can add new fresh entry.
+            कृपया मान्य Token Number दर्ज करें या आप नई Entry जोड़ सकते हैं।
           </Typography>
         </div>
         <Button
@@ -100,7 +100,7 @@ const PatientDetails = ({ visitState, tokenState, ...props }) => {
           className="btn-regular"
           onClick={handleError}
         >
-          Add New Patient
+          Register as New Patient
         </Button>
       </Box>
     );
@@ -138,14 +138,15 @@ const PatientDetails = ({ visitState, tokenState, ...props }) => {
             </TableBody>
           </Table>
         </TableContainer>
-        <Box display="flex" justifyContent="flex-end" alignItems="flex-end">
+        <Box display="flex" justifyContent="center" alignItems="center">
           <Button
+            variant="contained"
+            style={{ backgroundColor: "#8446a2" }}
             className="btn-regular"
-            variant="outlined"
-            size="medium"
+            size="large"
             onClick={addPatientHandler}
           >
-            Add Entry
+            दर्ज करे
           </Button>
         </Box>
       </Box>

@@ -130,7 +130,7 @@ const FirstVisit = () => {
           alert("Appointment Booked Successfully!");
           dispatch({ type: "reset" });
         }
-         await response.json();
+        await response.json();
       } catch (error) {
         setLoading(false);
         dispatch({ type: "FETCH_ERROR", payload: error });
@@ -169,6 +169,10 @@ const FirstVisit = () => {
         <br />
         <Typography variant="h6" className="blink">
           कृपया आपला पूर्ण नाव वडिल/पतिच्या नावासह टाकावे.
+        </Typography>
+        <br />
+        <Typography variant="h6" className="blink">
+          कृपया अपना पूरा नाम पिता/पति के नाम के साथ दर्ज करें।
         </Typography>
         <Grid mt={2}>
           <TextField
@@ -266,7 +270,7 @@ const FirstVisit = () => {
         </Grid>
         <Grid mt={2}>
           <Typography variant="body1">
-            Do you have issue of Blood Pressure?
+            क्या आपको ब्लड प्रेशर की समस्या है?
           </Typography>
           <FormControl>
             <Select
@@ -284,7 +288,7 @@ const FirstVisit = () => {
         <Grid mt={2}>
           <FormControl>
             <Typography variant="body1">
-              Do you have issue of Diabetes?
+              क्या आपको Diabetes की समस्या है?
             </Typography>
             <Select
               required

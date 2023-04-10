@@ -30,7 +30,13 @@ const SecondVisit = ({ tokenNumber, details }) => {
         <br />
         Token Number नसेलतर First Visit मधे Yes सिलेक्ट करावे.
       </Typography>
-
+      <br />
+      <Typography variant="h6" className="blink">
+        आपके डॉक्टर द्वारा दिए गए पत्र के ऊपर दाईं ओर आपका Token Number देख सकते
+        है।
+        <br />
+        यदि कोई टोकन नंबर नहीं है, तो First Visit में Yes का चयन करें।
+      </Typography>
       <Grid mt={3}>
         <FormControl>
           <TextField
@@ -53,12 +59,13 @@ const SecondVisit = ({ tokenNumber, details }) => {
         justify="center"
       >
         <Button
+          variant="contained"
+          style={{ backgroundColor: "#8446a2" }}
           onClick={handleChangeToken}
-          variant="outlined"
           size="large"
           className="btn-regular"
         >
-          Find Patient
+          Find Name
         </Button>
       </Grid>
     </>
