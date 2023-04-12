@@ -10,6 +10,7 @@ import {
   Select,
   TextField,
   Grid,
+  Container,
 } from "@mui/material";
 
 const initialState = {
@@ -164,7 +165,7 @@ const FirstVisit = () => {
     );
   } else {
     patientForm = (
-      <>
+      <Container>
         <br />
         <br />
         <Typography variant="h6" className="blink">
@@ -212,13 +213,14 @@ const FirstVisit = () => {
             onChange={(e) => handleChange(e)}
             value={age}
             type="number"
-            onInput={(e) => {
-              e.target.value = Math.max(0, parseInt(e.target.value))
-                .toString()
-                .slice(0, 3);
-            }}
-            min={0}
-          />
+            // onInput={(e) => {
+            //   e.target.value = Math.max(0, parseInt(e.target.value))
+            //     .toString()
+            //     .slice(0, 3);
+            // }}
+            // min={0}
+            inputProps={{ step: "0.1", lang: "en-US" }}
+            />
           <Select
             value={ageUnit}
             label="Age"
@@ -261,11 +263,22 @@ const FirstVisit = () => {
 
         <Grid mt={2}>
           <TextField
+            type="Number"
             label="Weight"
             name="weight"
             value={weight}
             onChange={(e) => handleChange(e)}
-            sx={{ width: 300 }}
+            inputProps={{ step: "0.1", lang: "en-US" }}
+            sx={{ width: 250 }}
+          />
+
+          <TextField
+            value="kg"
+            InputProps={{
+              readOnly: true,
+            }}
+            sx={{ width: 50 }}
+
           />
         </Grid>
         <Grid mt={2}>
@@ -311,7 +324,7 @@ const FirstVisit = () => {
             Register
           </Button>
         </Grid>
-      </>
+      </Container>
     );
   }
   return patientForm;

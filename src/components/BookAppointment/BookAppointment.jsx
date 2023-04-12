@@ -28,7 +28,8 @@ function BookAppointment() {
   return (
     <div className="container-fluid">
       <div className="row ">
-        <div className="col-md-12 text-center">
+        <div className="col-md-4 text-center"></div>
+        <div className="col-md-4 text-center">
           <h1 style={{ color: "#8446a2" }}>Book an Appointment</h1>
           <FormControl>
             <InputLabel>First Visit</InputLabel>
