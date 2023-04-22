@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { InputLabel, MenuItem, FormControl, Select } from "@mui/material";
+import {
+  InputLabel,
+  MenuItem,
+  FormControl,
+  Select,
+  Typography,
+} from "@mui/material";
 import FirstVisit from "./FirstVisit";
 import SecondVisit from "./SecondVisit";
 import PatientDetails from "./PatientDetails";
@@ -31,6 +37,16 @@ function BookAppointment() {
         <div className="col-md-4 text-center"></div>
         <div className="col-md-4 text-center">
           <h1 style={{ color: "#8446a2" }}>Book an Appointment</h1>
+          <Typography variant="h6" className="blink">
+            पहिल्यांदा डॉक्टर विजिट साठी आले असाल तर First Visit मध्ये Yes वर
+            क्लिक करावे अन्यथा Next Visit वर क्लिक करावे.
+          </Typography>
+          <br />
+          <Typography variant="h6" className="blink">
+            अगर आप पहली बार डॉक्टर से मिलने आए हैं तो First Visit पर Yes क्लिक
+            करें अन्यथा Next Visit पर क्लिक करें।
+          </Typography>
+          <br />
           <FormControl>
             <InputLabel>First Visit</InputLabel>
             <Select
@@ -40,7 +56,7 @@ function BookAppointment() {
               sx={{ width: 300 }}
             >
               <MenuItem value="Yes">Yes</MenuItem>
-              <MenuItem value="No">No</MenuItem>
+              <MenuItem value="No">Next Visit</MenuItem>
             </Select>
           </FormControl>
           {visitFlag}

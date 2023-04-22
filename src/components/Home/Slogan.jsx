@@ -32,11 +32,11 @@ const ClinicIntro = () => {
           <br />
           Devri Branch(Evening: Thursday): +91-7056414141
           <br /> <br />
-          To Book Online:
+          To Book Appointment Online &nbsp; 
           <Button
             onClick={() => navigate("/BookAppointment")}
             variant="text"
-            style={{ color: "#fff" }}
+            style={{ color: "#fff", backgroundColor: "#8624b5" }}
           >
             Click here
           </Button>
