@@ -41,6 +41,7 @@ const PatientDetails = ({ visitState, tokenState, ...props }) => {
   const addPatientHandler = async () => {
     setLoading(true);
     patientDetail.visitNo += 1;
+    patientDetail.sentToDoctor = 0;
     await fetch(process.env.REACT_APP_API_URL + "/patient/addRepeatPatient", {
       method: "POST",
       body: JSON.stringify(patientDetail),

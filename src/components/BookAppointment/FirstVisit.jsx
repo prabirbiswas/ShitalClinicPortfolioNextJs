@@ -25,6 +25,7 @@ const initialState = {
     BP: "false",
     bloodSugar: "false",
     visitNo: "1",
+    sentToDoctor: 0,
   },
   isLoading: true,
   error: null,
@@ -220,7 +221,7 @@ const FirstVisit = () => {
             // }}
             // min={0}
             inputProps={{ step: "0.1", lang: "en-US" }}
-            />
+          />
           <Select
             value={ageUnit}
             label="Age"
@@ -278,7 +279,6 @@ const FirstVisit = () => {
               readOnly: true,
             }}
             sx={{ width: 50 }}
-
           />
         </Grid>
         <Grid mt={2}>
